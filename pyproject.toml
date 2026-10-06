@@ -1,0 +1,23 @@
+[project]
+name = "annot8"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Arnav Parashar", email = "arnavparashar408@gmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "dearpygui>=2.3.1",
+]
+
+[project.scripts]
+annot8 = "annot8:main"
+
+[build-system]
+requires = ["uv_build>=0.12.17,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "annot8"
+module-root = "."
