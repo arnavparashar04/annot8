@@ -1,20 +1,18 @@
-import dearpygui.dearpygui as dpg
+import sys
+import PySide6
+from PySide6.QtWidgets import QApplication, QMainWindow
 
 
 def main():
-    dpg.create_context()
-    dpg.create_viewport(title="annot8")
-    wid = dpg.get_viewport_client_width()
-    hei = dpg.get_viewport_client_height()
+    app = QApplication(sys.argv)
+    print(f"Running pyside6 version : {PySide6.__version__}")
+    window = QMainWindow()
+    window.setWindowTitle("Annot8")
+    window.setStyleSheet("QMainWindow {background-color: #000000}")
+    window.resize(1000, 700)
+    window.show()
 
-    dpg.set_viewport_height(hei)
-    dpg.set_viewport_width(wid)
-    dpg.set_viewport_clear_color([255, 255, 255])
-
-    dpg.setup_dearpygui()
-    dpg.show_viewport()
-    dpg.start_dearpygui()
-    dpg.destroy_context()
+    sys.exit(app.exec())
 
 
 if __name__ == "__main__":
